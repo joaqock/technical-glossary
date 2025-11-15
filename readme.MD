@@ -16,7 +16,7 @@ Deploy: 👉 https://technical-glossary.vercel.app/
 - 🔎 **Buscador en tiempo real**
 - 🏷️ **Filtros por categoría**
 - ✨ **Animaciones suaves** para cards y carga inicial
-- 🎨 **Diseño oscuro minimalista y responsive**
+- 🎨 **Diseño minimalista y responsive**
 - ⚡ **Tecnologías base sin frameworks** (HTML, CSS, JS)
 
 ---
