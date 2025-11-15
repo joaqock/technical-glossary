@@ -47,6 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  let currentPage = 1;
+  const itemsPerPage = 9;
+
+  function paginate(items) {
+    const start = (currentPage - 1) * itemsPerPage;
+    return items.slice(start, start + itemsPerPage);
+  }
+
   function applyFilters() {
     const q = normalize(currentSearch.trim());
 
@@ -69,7 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     });
 
-    renderList(filteredItems);
+    currentPage = 1; 
+    renderList(paginate(filteredItems));
+    renderPagination(filteredItems.length);
   }
 
   function renderList(items) {
@@ -79,7 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const card = document.createElement("article");
     card.className = "card card-enter";
 
-    // pequeño delay para efecto en cascada
     card.style.animationDelay = `${index * 40}ms`;
 
       const header = document.createElement("div");
@@ -140,8 +149,57 @@ document.addEventListener("DOMContentLoaded", () => {
       listEl.appendChild(card);
     });
 
-    resultsCountEl.textContent = `${items.length} term(s) found`;
+    resultsCountEl.textContent = `${filteredItems.length} term(s) found`;
   }
+
+  function renderPagination(totalItems) {
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    const paginationEl = document.getElementById("pagination");
+
+    paginationEl.innerHTML = "";
+
+    if (totalPages <= 1) return;
+
+    const prevBtn = document.createElement("button");
+    prevBtn.textContent = "‹ Prev";
+    prevBtn.className = "page-btn" + (currentPage === 1 ? " disabled" : "");
+    prevBtn.onclick = () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderList(paginate(filteredItems));
+        renderPagination(filteredItems.length);
+        window.scrollTo(0, 0);
+      }
+    };
+    paginationEl.appendChild(prevBtn);
+
+    for (let p = 1; p <= totalPages; p++) {
+      const btn = document.createElement("button");
+      btn.textContent = p;
+      btn.className = "page-btn" + (p === currentPage ? " active" : "");
+      btn.onclick = () => {
+        currentPage = p;
+        renderList(paginate(filteredItems));
+        renderPagination(filteredItems.length);
+        window.scrollTo(0, 0);
+      };
+      paginationEl.appendChild(btn);
+    }
+
+    const nextBtn = document.createElement("button");
+    nextBtn.textContent = "Next ›";
+    nextBtn.className = "page-btn" + (currentPage === totalPages ? " disabled" : "");
+    nextBtn.onclick = () => {
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderList(paginate(filteredItems));
+        renderPagination(filteredItems.length);
+        window.scrollTo(0, 0);
+      }
+    };
+    paginationEl.appendChild(nextBtn);
+  }
+
 
   function speakTerm(rawTerm) {
     if (!("speechSynthesis" in window)) {
@@ -168,7 +226,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   searchInput.addEventListener("input", (e) => {
     currentSearch = e.target.value;
-    applyFilters();
+    currentPage = 1;
+  applyFilters();
   });
 
   filterChips.forEach((chip) => {
@@ -176,6 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
       filterChips.forEach((c) => c.classList.remove("active"));
       chip.classList.add("active");
       currentCategory = chip.dataset.category || "all";
+      currentPage = 1;
       applyFilters();
     });
   });
