@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return "linear-gradient(135deg, #ec4899, #f97316)";
       case "Databases":
         return "linear-gradient(135deg, #22c55e, #4ade80)";
-      case "Graphics":
+      case "Professions":
         return "linear-gradient(135deg, #a855f7, #6366f1)";
       case "Security":
         return "linear-gradient(135deg, #ef4444, #f97316)";

@@ -51,6 +51,7 @@ const glossary = [
     category: "Web"
   },
 
+  // Hardware
   {
     term: "CPU (Central Processing Unit)",
     translation: "Unidad central de procesamiento",
@@ -61,6 +62,36 @@ const glossary = [
     term: "RAM (Random Access Memory)",
     translation: "Memoria de acceso aleatorio",
     definition: "Short-term memory used by the computer to store active data and programs.",
+    category: "Hardware"
+  },
+  {
+    term: "Motherboard",
+    translation: "Placa madre",
+    definition: "The main circuit board that connects and allows communication between all components of a computer.",
+    category: "Hardware"
+  },
+  {
+    term: "Hard drive",
+    translation: "Disco duro",
+    definition: "A storage device that keeps data permanently, even when the computer is turned off.",
+    category: "Hardware"
+  },
+  {
+    term: "Power supply",
+    translation: "Fuente de alimentación",
+    definition: "The component that converts electrical power and provides it to all parts of the computer.",
+    category: "Hardware"
+  },
+  {
+    term: "Heat sink",
+    translation: "Disipador de calor",
+    definition: "A device that absorbs and disperses heat away from components like the CPU.",
+    category: "Hardware"
+  },
+  {
+    term: "Expansion card",
+    translation: "Tarjeta de expansión",
+    definition: "A circuit board that can be inserted into a slot on the motherboard to add new functions to a computer.",
     category: "Hardware"
   },
   {
@@ -94,6 +125,7 @@ const glossary = [
     category: "Hardware"
   },
 
+  // User Interface / Desktop
   {
     term: "Operating system",
     translation: "Sistema operativo",
@@ -131,6 +163,7 @@ const glossary = [
     category: "UI"
   },
 
+  // Word processing
   {
     term: "Document",
     translation: "Documento",
@@ -168,6 +201,7 @@ const glossary = [
     category: "Word processing"
   },
 
+  // Databases & spreadsheets
   {
     term: "Database",
     translation: "Base de datos",
@@ -217,37 +251,7 @@ const glossary = [
     category: "Databases"
   },
 
-  {
-    term: "Pixel",
-    translation: "Píxel",
-    definition: "The smallest unit of an image displayed on a screen.",
-    category: "Graphics"
-  },
-  {
-    term: "Resolution",
-    translation: "Resolución",
-    definition: "The level of detail or sharpness of an image.",
-    category: "Graphics"
-  },
-  {
-    term: "Contrast",
-    translation: "Contraste",
-    definition: "The difference between the light and dark areas of an image.",
-    category: "Graphics"
-  },
-  {
-    term: "Crop",
-    translation: "Recortar",
-    definition: "To remove unwanted outer areas from an image.",
-    category: "Graphics"
-  },
-  {
-    term: "JPEG (Joint Photographic Experts Group)",
-    translation: "Formato de imagen JPEG",
-    definition: "A common file format used for compressed digital photographs.",
-    category: "Graphics"
-  },
-
+  // Security
   {
     term: "Password",
     translation: "Contraseña",
@@ -285,7 +289,7 @@ const glossary = [
     category: "Security"
   },
 
-
+  // Programming
   {
     term: "Algorithm",
     translation: "Algoritmo",
@@ -377,6 +381,7 @@ const glossary = [
     category: "Programming"
   },
 
+  // Tools (incluye parte de lo que antes era Graphics)
   {
     term: "Framework",
     translation: "Framework",
@@ -400,5 +405,85 @@ const glossary = [
     translation: "Rama",
     definition: "A separate line of development in a version control system.",
     category: "Tools"
+  },
+  {
+    term: "Pixel",
+    translation: "Píxel",
+    definition: "The smallest unit of an image displayed on a screen.",
+    category: "Tools"
+  },
+  {
+    term: "Resolution",
+    translation: "Resolución",
+    definition: "The level of detail or sharpness of an image.",
+    category: "Tools"
+  },
+  {
+    term: "Crop",
+    translation: "Recortar",
+    definition: "To remove unwanted outer areas from an image.",
+    category: "Tools"
+  },
+
+  // IT Professions
+  {
+    term: "Software developer",
+    translation: "Desarrollador de software",
+    definition: "A professional who designs, writes and maintains computer programs and applications.",
+    category: "Professions"
+  },
+  {
+    term: "Front-end developer",
+    translation: "Desarrollador front-end",
+    definition: "A developer who focuses on the visual and interactive parts of a website or application that users see.",
+    category: "Professions"
+  },
+  {
+    term: "Back-end developer",
+    translation: "Desarrollador back-end",
+    definition: "A developer who works on the server side, databases and application logic behind the scenes.",
+    category: "Professions"
+  },
+  {
+    term: "Full-stack developer",
+    translation: "Desarrollador full-stack",
+    definition: "A developer who works on both front-end and back-end parts of an application.",
+    category: "Professions"
+  },
+  {
+    term: "Network administrator",
+    translation: "Administrador de redes",
+    definition: "A person who installs, configures and maintains an organization's computer networks.",
+    category: "Professions"
+  },
+  {
+    term: "Database analyst",
+    translation: "Analista de bases de datos",
+    definition: "A professional who designs, maintains and optimizes database structures and queries.",
+    category: "Professions"
+  },
+  {
+    term: "Systems analyst",
+    translation: "Analista de sistemas",
+    definition: "A person who studies existing systems and designs solutions to meet business requirements.",
+    category: "Professions"
+  },
+  {
+    term: "Technical support specialist",
+    translation: "Especialista de soporte técnico",
+    definition: "Someone who helps users solve hardware and software problems.",
+    category: "Professions"
+  },
+  {
+    term: "UX designer",
+    translation: "Diseñador UX",
+    definition: "A professional who focuses on the user experience, making interfaces easy and pleasant to use.",
+    category: "Professions"
+  },
+  {
+    term: "IT manager",
+    translation: "Gerente de TI",
+    definition: "A person responsible for planning and supervising technology use in an organization.",
+    category: "Professions"
   }
 ];
