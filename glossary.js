@@ -1,5 +1,3 @@
-// Lista de términos técnicos para el glosario
-// term (inglés), translation (español), definition (en inglés), category
 const glossary = [
   // Web & Internet
   {
@@ -381,7 +379,7 @@ const glossary = [
     category: "Programming"
   },
 
-  // Tools (incluye parte de lo que antes era Graphics)
+  // Tools
   {
     term: "Framework",
     translation: "Framework",
